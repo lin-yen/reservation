@@ -7,7 +7,8 @@
     "dev": "sh dev-tools/check-dev-version.bash && vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint src --ext .ts,.tsx,.vue,.js,.jsx"
+    "lint": "eslint src --ext .ts,.tsx,.vue,.js,.jsx",
+    "version": "sh dev-tools/version.sh"
   },
   "dependencies": {
     "check-node-version": "^4.2.1",
@@ -19,6 +20,7 @@
     "@vitejs/plugin-vue": "^4.1.0",
     "@volar/vue-language-plugin-pug": "^1.6.5",
     "autoprefixer": "^10.4.14",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -29,6 +31,7 @@
     "prettier": "^2.8.8",
     "pug": "^3.0.2",
     "sass": "^1.62.1",
+    "standard-version": "^9.5.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
     "vite-plugin-eslint": "^1.8.1",
@@ -37,5 +40,10 @@
   "engines": {
     "npm": "=9.5.1",
     "node": "=18.16.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
