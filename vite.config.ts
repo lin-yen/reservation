@@ -4,12 +4,14 @@ import postCssPxToRem from 'postcss-pxtorem';
 import autoprefixer from 'autoprefixer';
 import eslintPlugin from 'vite-plugin-eslint';
 import legacy from '@vitejs/plugin-legacy';
+import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
       vue: '@vue/compat',
+      src: path.resolve(__dirname, './src'),
     },
   },
   plugins: [
