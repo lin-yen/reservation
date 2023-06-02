@@ -1,0 +1,182 @@
+/**
+*   # Lists
+*   -------
+*   ## Layout
+*   ## Text
+*   ## Positioning
+*   ## Dimensions
+*   ## Image
+*   ## Resets
+*/
+
+
+/**
+* Layout
+*/
+
+@mixin gaps-list {
+    @for $i from 0 through 5 {
+        .gap-#{$i} {
+            gap: #{$i}rem;
+        }
+        .gap-#{$i}h { // half
+            gap: #{$i + 0.5}rem;
+        }
+        .gap-#{$i}q { // quarter
+            gap: #{$i + 0.25}rem;
+        }
+    }
+}
+@mixin flexes-list {
+    @for $i from 1 through 5 {
+        .flex-#{$i} {
+            flex: $i;
+        }
+    }
+}
+
+
+/**
+* Text
+*/
+
+@mixin text-color-list($colors) {
+    @each $name, $color in $colors {
+        .text-#{$name} {
+            color: $color;
+        }
+    }
+}
+@mixin font-sizes-list {
+    @for $i from 1 through 5 {
+        .font-#{$i} {
+            font-size: #{$i}rem;
+        }
+        .font-#{$i}h {
+            font-size: #{$i + 0.5}rem;
+        }
+    }
+}
+
+
+/**
+* Positioning
+*/
+
+@mixin positions-list {
+    $positions: (
+        "top",
+        "bottom",
+        "left",
+        "right"
+    );
+
+    @each $position in $positions {
+        @for $i from 0 through 5 {
+            .#{$position}-#{$i} {
+                #{$position}: #{$i}rem;
+            }
+            .#{$position}-#{$i}h {
+                #{$position}: #{$i + 0.5}rem;
+            }
+            .#{$position}-#{$i}q {
+                #{$position}: #{$i + 0.25}rem;
+            }
+        }
+    }
+}
+@mixin z-indexes-list {
+    @for $i from -1 through 5 {
+        @if $i < 0 {
+            .z-#{($i * -1)}n {
+                z-index: $i;
+            }
+        } @else {
+            .z-#{$i} {
+                z-index: $i;
+            }
+        }
+    }
+}
+
+
+/**
+* Dimensions
+*/
+@mixin dimensions-list {
+    $dimensions: (
+        "max-w": max-width,
+        "max-h": max-height,
+        "min-w": min-width,
+        "min-h": min-height,
+        "w": width,
+        "h": height,
+    );
+
+    @each $key, $property in $dimensions {
+        @for $i from 1 through 20 {
+            .#{$key}-#{$i} {
+                #{$property}: #{$i}rem;
+            }
+            .#{$key}-#{$i}h {
+                #{$property}: #{$i + 0.5}rem;
+            }
+        }
+    }
+}
+
+
+/**
+* Image
+*/
+@mixin object-fit-list {
+    $vals: (
+        "fill",
+        "contain",
+        "cover",
+        "none",
+        "scale-down"
+    );
+
+    @each $val in $vals {
+        .object-fit-#{$val} {
+            object-fit: #{$val};
+        }
+    }
+}
+@mixin object-position-list {
+    $posX: (
+        "left",
+        "center",
+        "right",
+    );
+    $posY: (
+        "top",
+        "center",
+        "bottom",
+    );
+
+    @each $x in $posX {
+        @each $y in $posY {
+            .object-position-#{$x}-#{$y} {
+                object-position: #{$x} #{$y};
+            }
+        }
+    }
+}
+
+
+/**
+* Resets
+*/
+
+@mixin reset-btn {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+@mixin reset-list {
+    padding: 0;
+    list-style: none;
+}

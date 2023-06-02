@@ -1,0 +1,18 @@
+.like-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.61);
+  &:hover,
+  &:active {
+    background-color: rgba(0, 0, 0, 0.726);
+  }
+}
+
+.like-btn > * {
+  place-self: center
+}
