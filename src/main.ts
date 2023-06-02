@@ -5,9 +5,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue';
 import router from './router';
+import setGlobalFilters from './filters';
 
-createApp(App)
+
+const app = createApp(App);
+
+setGlobalFilters(app);
+
+app
   .use(router)
   .use(BootstrapVue as any)
-  .use(BootstrapVueIcons as any)
-  .mount('#app');
+  .use(BootstrapVueIcons as any);
+
+app.mount('#app');
