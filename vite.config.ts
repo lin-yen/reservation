@@ -8,6 +8,8 @@ import * as path from 'path';
 import Components from 'unplugin-vue-components/vite';
 import { BootstrapVueResolver } from 'unplugin-vue-components/resolvers';
 
+const isDev = process.env.NODE_ENV;
+
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -37,16 +39,15 @@ export default defineConfig({
   ],
   css: {
     postcss: {
-      plugins: [
-        postCssPxToRem({
-          rootValue: 16,
-          propList: ['*'],
-        }),
-        autoprefixer({
-          overrideBrowserslist: ['last 2 versions'],
-          grid: true,
-        }),
-      ],
+      plugins: isDev
+        ? []
+        : [
+            postCssPxToRem({ rootValue: 16, propList: ['*'] }),
+            autoprefixer({
+              overrideBrowserslist: ['last 2 versions'],
+              grid: true,
+            }),
+          ],
     },
   },
 });
