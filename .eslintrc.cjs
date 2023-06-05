@@ -22,7 +22,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
+    quotes: ['error', 'single', { avoidEscape: true }],
     semi: ['error', 'always'],
   },
 };

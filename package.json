@@ -4,8 +4,8 @@
   "version": "0.0.2",
   "type": "module",
   "scripts": {
-    "dev": "sh dev-tools/check-dev-version.bash && vite",
-    "build": "vue-tsc && vite build",
+    "dev": "sh dev-tools/check-dev-version.bash && vite --base=/xxx/",
+    "build": "vue-tsc && vite build --base=/xxx/",
     "preview": "vite preview",
     "lint": "eslint src --ext .ts,.tsx,.vue,.js,.jsx",
     "version": "sh dev-tools/version.sh"

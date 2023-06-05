@@ -35,7 +35,7 @@ b-navbar(toggleable="md" type="dark" variant="dark" class="mb-5")
 </template>
 
 <script setup lang="ts">
-import facilities from 'src/assets/data/maps/facility-icons.json';
+import facilities from 'src/assets/data/maps/facility-icons';
 import { onBeforeMount, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import HotelsSection from 'src/components/HotelsSection.vue';
+</script>
+
 <script lang="ts">
 export default {
   name: 'HomePage',
@@ -5,10 +9,6 @@ export default {
 </script>
 
 <template lang="pug">
-div(class="content") Home
+div
+  HotelsSection
 </template>
-
-<style lang="sass" scoped>
-.content
-  background-color: blue
-</style>
