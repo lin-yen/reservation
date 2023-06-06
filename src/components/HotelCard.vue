@@ -19,11 +19,11 @@ const facilityIcons = ref(facilityIconsConf);
 const minPrice = computed(() => {
   return Math.min(...Object.values(props.hotel.pricing.bed));
 });
-const img = ref('');
 
-import(`src/assets/img/hotels/${props.hotel.img}.jpg`).then((value) => {
-  img.value = value.default;
-});
+const imageUrl = new URL(
+  `../assets/img/hotels/${props.hotel.img}.jpg`,
+  import.meta.url
+).href;
 </script>
 
 <script lang="ts">
@@ -44,7 +44,7 @@ b-card(
       lg="3"
       class="p-2")
       b-card-img(
-        :src="img"
+        :src="imageUrl"
         class="hotel-card__img")
       b-button(
         class="like-btn text-danger"

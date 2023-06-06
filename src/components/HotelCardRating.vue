@@ -41,7 +41,7 @@ div
     div(class="d-flex align-items-center")
       span(class="flex-1 text-muted")
         i(class="text-primary fas fa-user-tie")
-        | Staff:
+        span(class="text-muted") Staff:
       b-form-rating(
         :value="props.rating.staff"
         variant="warning"
@@ -50,7 +50,7 @@ div
     div(class="d-flex align-items-center")
       span(class="flex-1 text-muted")
         i(class="text-primary fas fa-concierge-bell")
-        | Service:
+        span(class="text-muted") Service:
       b-form-rating(
         :value="props.rating.service"
         variant="warning"
@@ -59,7 +59,7 @@ div
     div(class="d-flex align-items-center")
       span(class="flex-1 text-muted")
         i(class="text-primary fas fa-soap")
-        | Cleanliness:
+        span(class="text-muted") Cleanliness:
       b-form-rating(
         :value="props.rating.cleanliness"
         variant="warning"
@@ -68,7 +68,7 @@ div
     div(class="d-flex align-items-center")
       span(class="flex-1 text-muted")
         i(class="text-primary fas fa-couch")
-        | Comfort:
+        span(class="text-muted") Comfort:
       b-form-rating(
         :value="props.rating.comfort"
         variant="warning"
@@ -76,7 +76,7 @@ div
         inline)
 </template>
 
-<style scoped lang="sass">
+<style lang="sass">
 .b-rating
   background-color: transparent
 </style>
