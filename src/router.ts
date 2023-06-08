@@ -16,10 +16,18 @@ const router = createRouter({
       props: true,
     },
     {
-      path: '/reservation',
+      path: '/reservation/:bookingData?',
       name: 'Reservation',
       component: () => import('src/views/Reservation.vue'),
-      props: true,
+      props: (route) => {
+        if (!route.params.bookingData) {
+          return {};
+        }
+
+        return {
+          bookingData: JSON.parse(route.params.bookingData as string),
+        };
+      },
     },
     {
       path: '/:pathMatch(.*)*',

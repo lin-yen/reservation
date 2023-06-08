@@ -12,6 +12,7 @@ import type { IHotelsItem } from 'src/models/i-hotels';
 import { useRouter } from 'vue-router';
 import { useBookingValidation } from 'src/mixins/validation/booking-validation';
 import { useValidateState } from 'src/mixins/validation/validate-state';
+import type { ReservationBookingData } from 'src/models/i-reservation-booking-data';
 
 const router = useRouter();
 const { form, v$ } = useBookingValidation();
@@ -71,16 +72,15 @@ const book = () => {
     router.push({
       name: 'Reservation',
       params: {
-        formAdultCount: form.value.adultCount,
-        formInfantCount: form.value.infantCount,
-        formCheckInDate: form.value.checkInDate?.toString(),
-        formCheckOutDate: form.value.checkOutDate?.toString(),
-        formBedSize: form.value.bedSize,
-        formincluded: form.value.included,
-        totalVisitorCount: totalVisitorCount.value,
-        totalPrice: totalPrice.value,
-        hotelImg: hotel.value?.img,
-        hotelName: hotel.value?.name,
+        bookingData: JSON.stringify({
+          ...form.value,
+          totalVisitorCount: totalVisitorCount.value,
+          totalPrice: totalPrice.value,
+          hotel: {
+            img: hotel.value?.img,
+            name: hotel.value?.name,
+          },
+        } as ReservationBookingData),
       },
     });
   }
